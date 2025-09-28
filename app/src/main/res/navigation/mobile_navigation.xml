@@ -22,4 +22,10 @@
         android:name="com.example.my_movie_list.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.example.my_movie_list.ui.movies.MovieListFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_home" />
 </navigation>
