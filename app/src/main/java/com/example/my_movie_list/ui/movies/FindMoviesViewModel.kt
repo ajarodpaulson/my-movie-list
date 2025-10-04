@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class MovieListViewModel : ViewModel() {
+class FindMoviesViewModel : ViewModel() {
     private val _movies = MutableStateFlow<List<Movie>>(emptyList())
     val movies: StateFlow<List<Movie>> = _movies
 
@@ -20,14 +20,21 @@ class MovieListViewModel : ViewModel() {
     private fun fetchMovies() {
         viewModelScope.launch {
             try {
-                println("made it here!!!")
                 val response = TmdbApi.retrofitService.getMostPopularMovies()
-                println("API response: $response")
                 _movies.value = response.results
             } catch (e: Exception) {
                 // Handle error (log, show message, etc.)
                 _movies.value = emptyList()
             }
         }
+    }
+
+    fun getMovieById(id: Int): Movie? {
+        for (movie in movies.value) {
+            if (movie.id == id) {
+                return movie;
+            }
+        }
+        return null;
     }
 }

@@ -61,6 +61,7 @@ dependencies {
 
     implementation(libs.foundation) // Correct: from foundation = { module = "androidx.compose.foundation:foundation" }
     implementation(libs.coil.compose)
+    implementation("androidx.compose.ui:ui-text-google-fonts")
 
     // Test dependencies for Compose - ensure these pick versions from BOM or have explicit versions
     testImplementation(platform(composeBom)) // Include BOM for test scope
@@ -83,7 +84,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.converter.scalars) // You had this in TOML, so I assume it's used
     implementation(libs.logging.interceptor)
-
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
