@@ -1,10 +1,15 @@
 package com.example.my_movie_list.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "movies")
 data class Movie(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     val adult: Boolean = true,
     val backdrop_path: String? = null,
     val genre_ids: List<Int>? = null,
-    val id: Int = 0,
     val original_language: String? = null,
     val original_title: String? = null,
     val overview: String? = null,

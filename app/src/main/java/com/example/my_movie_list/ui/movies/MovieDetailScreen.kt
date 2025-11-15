@@ -116,10 +116,10 @@ fun MovieDetailContentPreview() {
     MovieDetailContent(
         movie = Movie(
             id = 1,
-            title = "Sample Movie",
             overview = "This is a sample movie overview",
             poster_path = "/sample.jpg",
             release_date = "2024-01-01",
+            title = "Sample Movie",
             vote_average = 8.5
         ),
         myListViewModel = viewModel(),
